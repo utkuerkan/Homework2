@@ -22,22 +22,22 @@ print("Center of mass:", center_of_mass)
 
 # Calculate distances
 distances = []
-for point, idx in zip(coordinates, range(n)):
+for point, index in zip(coordinates, range(n)):
     distance = (center_of_mass[0]-point[0])**2 + (center_of_mass[1]-point[1])**2
     distance = distance**.5
-    distances.append( (distance, idx) )
+    distances.append( (distance, index) )
 print("Distances are:", distances)
 
 # Find closest point
 closest_point = distances[0]
-for distance, idx in distances:
+for distance, index in distances:
     if distance < closest_point[0]:
-        closest_point = (distance, idx)
+        closest_point = (distance, index)
 print("Closest point is:", coordinates[closest_point[1]], "with distance:", closest_point[0])
 
 # Find furthest point
 furthest_point = distances[0]
-for distance, idx in distances:
+for distance, index in distances:
     if distance >furthest_point[0]:
-        furthest_point = (distance, idx)
+        furthest_point = (distance, index)
 print("Furthest point is:", coordinates[furthest_point[1]], "with distance:", furthest_point[0])
